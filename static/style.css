@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e6d3c1, #c8a98d);
+    color: #2b1b12;
+}
+
+/* Page wrapper */
+.page {
+    max-width: 900px;
+    margin: auto;
+    padding: 60px 20px;
+    animation: fadeIn 1.2s ease;
+}
+
+/* Heading */
+.heading {
+    text-align: center;
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.subheading {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+/* Main Box */
+.main-box {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(14px);
+    border-radius: 22px;
+    padding: 40px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+    animation: slideUp 1s ease;
+}
+
+/* Form layout: TOP TO BOTTOM */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Inputs */
+input {
+    padding: 16px 18px;
+    border-radius: 14px;
+    border: 1px solid #d1b59c;
+    font-size: 15px;
+    background: #fffaf5;
+}
+
+input:focus {
+    outline: none;
+    border-color: #8b5a2b;
+    box-shadow: 0 0 0 3px rgba(139, 90, 43, 0.2);
+}
+
+/* Button */
+button {
+    margin-top: 25px;
+    padding: 18px;
+    border-radius: 16px;
+    border: none;
+    font-size: 17px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #8b5a2b, #6f3f1d);
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.35s ease;
+}
+
+button:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(111, 63, 29, 0.4);
+}
+
+/* Result Box */
+.result-box {
+    margin-top: 35px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    animation: popUp 0.8s ease;
+}
+
+.result-box p {
+    font-size: 15px;
+    opacity: 0.8;
+}
+
+.result-box h2 {
+    margin-top: 10px;
+    font-size: 34px;
+    color: #6f3f1d;
+}
+
+/* Animations */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popUp {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+button.loading {
+    background: linear-gradient(135deg, #b08968, #7f5539);
+    cursor: not-allowed;
+    opacity: 0.9;
+}
+
+
+

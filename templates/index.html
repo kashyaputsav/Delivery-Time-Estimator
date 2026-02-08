@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Porter Delivery Time Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="page">
+
+    <h1 class="heading">🚚 Porter Delivery Time Estimator</h1>
+    <p class="subheading">AI-powered delivery time prediction system</p>
+
+    <div class="main-box">
+        <form method="POST">
+
+            <input type="number" name="total_items" placeholder="Total Items" required>
+            <input type="number" name="subtotal" placeholder="Subtotal (₹)" required>
+            <input type="number" name="num_distinct_items" placeholder="Distinct Items" required>
+            <input type="number" name="min_item_price" placeholder="Min Item Price" required>
+            <input type="number" name="max_item_price" placeholder="Max Item Price" required>
+            <input type="number" name="total_onshift_partners" placeholder="Onshift Partners" required>
+            <input type="number" name="total_busy_partners" placeholder="Busy Partners" required>
+            <input type="number" name="total_outstanding_orders" placeholder="Outstanding Orders" required>
+
+            <button type="submit">Predict Delivery Time 🚀</button>
+        </form>
+    </div>
+
+    {% if prediction %}
+    <div class="result-box">
+        <p>Estimated Delivery Time</p>
+        <h2>{{ prediction }} minutes</h2>
+    </div>
+    {% endif %}
+
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
+
+
+
+
+
