@@ -1,205 +1,176 @@
-🚚 Delivery Time Estimator (Food Delivery Prediction System)
+# 🚚 Delivery Time Estimator (Food Delivery Prediction System)
 
-Project Duration: Jan 2026
-Domain: Machine Learning, Predictive Analytics, Logistics Optimization
-Tech Stack: Python, Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn, Flask, Jupyter Notebook
+**Project Duration:** Jan 2026  
+**Domain:** Machine Learning, Predictive Analytics, Logistics Optimization  
+**Tech Stack:** Python, Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn, Flask, Jupyter Notebook  
 
-📌 Project Overview
+---
 
-Modern food delivery platforms like Swiggy, Zomato, and Uber Eats rely on intelligent prediction systems to estimate delivery time accurately. This project builds a real-world machine learning regression system that predicts food delivery duration using operational, order-level, and partner availability features.
+## 📌 Project Overview
+
+Modern food delivery platforms like Swiggy, Zomato, and Uber Eats rely on intelligent prediction systems to estimate delivery time accurately. This project builds a real-world **machine learning regression system** that predicts food delivery duration using operational, order-level, and partner availability features.
 
 The system processes structured order data and operational signals to predict delivery time in minutes. It is designed with scalability and deployment readiness in mind, simulating real-world logistics optimization systems.
 
-🎯 Key Objectives
+---
 
-Predict delivery time accurately using operational features
+## 🎯 Key Objectives
 
-Analyze impact of partner availability & order load
+- Predict delivery time accurately using operational features  
+- Analyze impact of partner availability & order load  
+- Build an end-to-end ML pipeline (EDA → Training → Evaluation → Deployment)  
+- Design the system to be API-deployable  
 
-Build an end-to-end ML pipeline (EDA → Training → Evaluation → Deployment)
+---
 
-Design the system to be API-deployable
-
-🧠 Problem Statement
+## 🧠 Problem Statement
 
 Accurate delivery time prediction is critical for:
 
-Customer satisfaction
+- Customer satisfaction  
+- Operational efficiency  
+- Delivery partner optimization  
+- Platform trust & retention  
 
-Operational efficiency
+Static time estimates fail to account for:
 
-Delivery partner optimization
+- Order complexity  
+- Store workload  
+- Partner availability  
+- Demand fluctuations  
 
-Platform trust & retention
+The goal is to build a regression-based ML system that dynamically predicts delivery duration based on real-world operational factors.
 
-Traditional static estimates fail to account for:
+---
 
-Order complexity
-
-Store workload
-
-Partner availability
-
-Real-time demand fluctuations
-
-The goal is to build a regression-based ML system that dynamically predicts delivery duration based on multiple real-world factors.
-
-📊 Dataset Description
+## 📊 Dataset Description
 
 The dataset represents structured operational and order-level features from a food delivery platform.
 
-🔢 Dataset Size
+### 🔢 Dataset Size
+~180,000+ order records  
+Supervised Regression Problem  
 
-~180,000+ order records
-Supervised Regression Problem
+### 🧾 Feature Overview
 
-🧾 Feature Overview
-Order-Level Features
+#### Order-Level Features
+- `total_items`
+- `subtotal`
+- `num_distinct_items`
+- `min_item_price`
+- `max_item_price`
 
-total_items
+#### Operational Features
+- `total_onshift_partners`
+- `total_busy_partners`
+- `total_outstanding_orders`
 
-subtotal
+#### Engineered Features
+- Encoded store category signals  
+- Derived operational metrics  
 
-num_distinct_items
+#### 🎯 Target Variable
+- `delivery_time` (Actual delivery duration in minutes)
 
-min_item_price
+---
 
-max_item_price
+## 🔧 Feature Engineering
 
-Operational Features
+### 1️⃣ Data Preprocessing
+- Removed irrelevant columns  
+- Handled missing values  
+- Converted timestamp columns  
+- Encoded categorical features  
+- Outlier inspection  
 
-total_onshift_partners
+### 2️⃣ Operational Feature Analysis
+- Analyzed workload vs delivery delay  
+- Studied partner availability impact  
+- Explored demand patterns  
 
-total_busy_partners
+### 3️⃣ Feature Optimization
+- Correlation-based feature selection  
+- Train-test split preparation  
+- Structured pipeline alignment  
 
-total_outstanding_orders
+---
 
-Engineered Features
+## 🤖 Model Architecture
 
-delivery_time_per_minute
+**Model Type:** Regression (Scikit-learn)
 
-Encoded store category signals
+### Why Regression?
+- Delivery time is continuous  
+- Requires error minimization  
+- Suitable for operational forecasting  
 
-🎯 Target Variable
+### Training Pipeline
+- Train-test split  
+- Model fitting  
+- Performance evaluation  
+- Error analysis  
 
-delivery_time (Actual delivery duration in minutes)
+---
 
-🔧 Feature Engineering
-1️⃣ Data Preprocessing
+## 📈 Model Evaluation
 
-Removed irrelevant columns
+**Evaluation Metrics Used:**
 
-Handled missing values
-
-Converted timestamp columns
-
-Encoded categorical features
-
-Outlier inspection
-
-2️⃣ Operational Feature Analysis
-
-Analyzed correlation between workload & delivery delay
-
-Studied partner availability impact
-
-Explored demand vs time patterns
-
-3️⃣ Feature Optimization
-
-Feature selection based on correlation
-
-Structured dataset alignment for training
-
-Train-test split preparation
-
-🤖 Model Architecture
-
-Model Type: Regression Model (Scikit-learn)
-
-Why Regression?
-
-Delivery time is continuous
-
-Requires error minimization rather than classification
-
-Suitable for operational forecasting problems
-
-Training Pipeline
-
-Train-test split
-
-Model fitting
-
-Performance evaluation
-
-Error analysis
-
-📈 Model Evaluation
-
-Evaluation Metrics Used:
-
-MAE (Mean Absolute Error)
-
-R² Score
-
-Example Performance:
-MAE: ~0.71 minutes  
-R² Score: ~0.19
+- MAE (Mean Absolute Error)  
 
 
-This demonstrates baseline predictive capability and provides scope for further optimization using advanced ensemble methods.
 
-🚀 Inference & Deployment Ready
+This provides a strong baseline model with scope for further improvement using ensemble techniques.
 
-The project is structured to allow easy deployment via:
+---
 
-Flask API
+## 🚀 Inference & Deployment Ready
 
-Saved trained model (model.pkl)
+The project supports deployment via:
 
-Input-based prediction pipeline
+- Flask API  
+- Saved trained model (`model.pkl`)  
+- Input-based prediction pipeline  
 
-This mimics real-world ML deployment used in logistics and food delivery platforms.
+This mirrors real-world ML deployment patterns used in logistics and delivery platforms.
 
-📁 Project Structure
-Delivery-Time-Estimator/
-│
-├── Delivery-Time-Estimator.ipynb
-├── model.pkl
-├── app.py
-├── requirements.txt
-└── README.md
+---
 
-▶️ How to Run the Project
-1️⃣ Install Dependencies
-pip install -r requirements.txt
+   ## 📁 Project Structure
+  ## Delivery-Time-Estimator/
+  │
+  ├── Delivery-Time-Estimator.ipynb
+  ├── model.pkl
+  ├── app.py
+  ├── requirements.txt
+  └── README.md
 
-2️⃣ Run Jupyter Notebook
-jupyter notebook
+---
+
+## ▶️ How to Run the Project
+
+### 1️⃣ Install Dependencies
+
+### 2️⃣ Run Jupyter Notebook
+
+Open `Delivery-Time-Estimator.ipynb` for training and evaluation.
+
+### 3️⃣ Run API (If Implemented)
 
 
-Open Delivery-Time-Estimator.ipynb for training and evaluation.
 
-3️⃣ Run API (If Implemented)
-python app.py
 
-🧪 Sample Prediction Output
-{
-  "predicted_delivery_time": 32.5
-}
-
-💡 Real-World Impact
+## 💡 Real-World Impact
 
 This project aligns with:
 
-Swiggy / Zomato delivery optimization
+Swiggy / Zomato ETA prediction
 
-Logistics ETA prediction systems
+Logistics optimization systems
 
-E-commerce last-mile optimization
+E-commerce last-mile delivery forecasting
 
-AI-driven operational forecasting
+AI-driven operational decision systems
 
 It demonstrates:
 
@@ -209,11 +180,14 @@ Structured data modeling
 
 Operational feature engineering
 
-Deployment-ready thinking
+Deployment-ready ML design
 
-🔮 Future Improvements
 
-XGBoost / LightGBM for better performance
+
+
+## 🔮 Future Improvements
+
+XGBoost / LightGBM integration
 
 Hyperparameter tuning (GridSearch / RandomSearch)
 
@@ -221,11 +195,13 @@ Cross-validation
 
 Feature interaction engineering
 
-Real-time streaming data integration
+Real-time streaming integration
 
-MLOps pipeline with Docker + CI/CD
+Docker + CI/CD MLOps pipeline
 
-👤 Author
+
+
+## Author
 
 Utsav Kashyap
 Data Scientist
